@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filereader content</title>
+  <script src="./fileContent.js"></script>
+</head>
+
+<body>
+  <input type="file" /><br />
+</body>
+<script>
+
+  document.querySelector('input[type=file]').addEventListener('change', async (e) => {
+    console.log(e.target)
+    // initFileContent(e.target, (item) => {
+    //   console.log(item)
+    // })
+    let res = await initFileContentAsync(e.target)
+    console.log(res)
+  })
+
+</script>
+
+</html>
