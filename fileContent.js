@@ -1,3 +1,5 @@
+const e = require("express")
+
 function initFileContent(inputFileDom, callback) {
   const [file] = inputFileDom.files
   const reader = new FileReader()
@@ -78,13 +80,20 @@ function initFileContentAsync(inputFileDom) {
     return resultArr
   }
 
+  console.log(file)
+
   if (file) {
-    reader.readAsText(file)
+    if (file.type === 'text/plain' ||
+      file.type === 'text/csv') {
+        reader.readAsText(file)
+    } else {
+      console.error('file type error: only txt or csv')
+    }
   }
 
   return new Promise(resolve => {
     reader.addEventListener('load', () => {
-      console.log(reader.result)
+      console.log(reader)
       resolve(checkResult(reader.result))
     }, false)
   })
