@@ -8,9 +8,7 @@ function initFileContent(inputFileDom, callback) {
     let tmpArr = []
     let tmpArr2 = []
     let resultArr = []
-    if (res.includes('\n')) {
-      tmpArr = res.split('\n')
-    }
+    tmpArr = res.split('\n')
     for (let i = 0; i < tmpArr.length; i++) {
       const element = tmpArr[i]
       if (element === '\n' ||
@@ -54,9 +52,7 @@ function initFileContentAsync(inputFileDom) {
     let tmpArr = []
     let tmpArr2 = []
     let resultArr = []
-    if (res.includes('\n')) {
-      tmpArr = res.split('\n')
-    }
+    tmpArr = res.split('\n')
     for (let i = 0; i < tmpArr.length; i++) {
       const element = tmpArr[i]
       if (element === '\n' ||
