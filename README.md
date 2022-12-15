@@ -21,7 +21,7 @@ document.querySelector('input[type=file]').addEventListener('change', async (e) 
 ### normal use
 
 ```JavaScript
-document.querySelector('input[type=file]').addEventListener('change', async (e) => {
+document.querySelector('input[type=file]').addEventListener('change', (e) => {
   console.log(e.target)
   initFileContent(e.target, (item) => {
     console.log(item)
